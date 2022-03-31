@@ -6,33 +6,26 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import ca.qc.cstj.consortium.R
 import ca.qc.cstj.consortium.databinding.ActivityMainBinding
-import ca.qc.cstj.consortium.domain.models.Delivery
-import ca.qc.cstj.consortium.presentation.adapters.AsyncDeliveryRecyclerViewAdapter
-import ca.qc.cstj.consortium.presentation.ui.dialogs.DeliveryDialogFragment
+import ca.qc.cstj.consortium.databinding.SplashActivityMainBinding
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivityMain : AppCompatActivity() {
-    private lateinit var  binding : ActivityMainBinding
+    private lateinit var  binding : SplashActivityMainBinding
     private val viewModel: SplashMainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = SplashActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        deliveryRecyclerViewAdapter = AsyncDeliveryRecyclerViewAdapter(this::onDeliveryItemClick)
 
-        viewModel.deliveries.observe(this) {
-            contactRecyclerViewAdapter.differ.submitList(it)
-            //contactRecyclerViewAdapter.notifyAllItemChanged()
+        viewModel.trader.observe(this) {
+            binding.txtEplil.text = it.eplil.toString()
+            binding.txtAwhil.text = it.Awhil.toString()
+            binding.txtVethyx.text = it.vethyx.toString()
+            binding.textLaspyx.text = it.laspyx.toString()
+            binding.txtSmiathil.text = it.smiathil.toString()
         }
-        private fun onDliveryItemClick(delivery: Delivery) {
-            //Toast.makeText(this, contact.fullName, Toast.LENGTH_SHORT).show()
-            val args = Bundle()
-            args.putString(DeliveryDialogFragment./*TODO*/, delivery.fullName)
-            DeliveryDialogFragment().apply {
-                arguments = args
-            }.show(supportFragmentManager, DeliveryDialogFragment.TAG)
-        }
+
     }
 }

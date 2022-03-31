@@ -93,7 +93,7 @@
                 app:srcCompat="@drawable/sm" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/txtEplil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="nb"
@@ -102,7 +102,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/txtAwhil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="nb"
@@ -111,7 +111,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/txtVethyx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="nb"
@@ -120,7 +120,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/textLaspyx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="nb"
@@ -129,7 +129,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/txtSmiathil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="nb"

@@ -35,7 +35,6 @@ abstract class AppDatabase : RoomDatabase() {
                     super.onCreate(db)
                     val ioScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
                     ioScope.launch {
-                        Instance?.contactRepository()?.create(Constants.PREPOPULATE_CONTACTS)
                     }
                 }
             }).build()

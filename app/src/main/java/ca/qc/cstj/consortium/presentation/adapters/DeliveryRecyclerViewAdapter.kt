@@ -11,9 +11,11 @@ import ca.qc.cstj.consortium.domain.models.Delivery
 class DeliveryRecyclerViewAdapter(var deliveries: List<Delivery>)
     : RecyclerView.Adapter<DeliveryRecyclerViewAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeliveryRecyclerViewAdapter.ViewHolder {\
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeliveryRecyclerViewAdapter.ViewHolder {
         //TODO
-        //val view = LayoutInflater.from(parent.context).inflate(R.layout.item_delivery, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_element, parent, false)
+
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: DeliveryRecyclerViewAdapter.ViewHolder, position: Int) {
@@ -27,7 +29,7 @@ class DeliveryRecyclerViewAdapter(var deliveries: List<Delivery>)
         inner class  ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
             //TODO
-            private val binding = ItemDeliveryBinding.bind(view)
+            //private val binding = ItemDeliveryBinding.bind(view)
 
             fun bind(delivery: Delivery){
 
