@@ -1,3 +1,4 @@
+/*
 package ca.qc.cstj.consortium.data.database
 
 import android.content.Context
@@ -5,6 +6,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
+import ca.qc.cstj.consortium.core.Constants
 import ca.qc.cstj.s05localdatasource.core.Constants
 import ca.qc.cstj.s05localdatasource.data.repositories.ContactRepository
 import ca.qc.cstj.s05localdatasource.domain.models.Contact
@@ -45,4 +47,4 @@ abstract class AppDatabase : RoomDatabase() {
         }
 
     }
-}
+}*/

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CONSORTIUM</string>
+    <string name="nomCommercant">Nom de commerçant</string>
+    <string name="ouvrir">OUVRIR</string>
+    <string name="chargement">CHARGEMENT</string>
+    <string name="televerser">TÉLÉVERSER</string>
 </resources>
