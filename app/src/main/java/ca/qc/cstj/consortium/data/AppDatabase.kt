@@ -1,5 +1,4 @@
-/*
-package ca.qc.cstj.consortium.data.database
+package ca.qc.cstj.consortium.data
 
 import android.content.Context
 import androidx.room.Database
@@ -7,20 +6,19 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import ca.qc.cstj.consortium.core.Constants
-import ca.qc.cstj.s05localdatasource.core.Constants
-import ca.qc.cstj.s05localdatasource.data.repositories.ContactRepository
-import ca.qc.cstj.s05localdatasource.domain.models.Contact
+import ca.qc.cstj.consortium.data.repositories.DeliveryRepositories
+import ca.qc.cstj.consortium.domain.models.Delivery
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 
-@Database(entities = [Contact::class], version = 1, exportSchema = false)
+@Database(entities = [Delivery::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     //TODO: Add Rooms Repository (DAO) here
     //abstract fun zzzRepository(): zzzRepository
-    abstract fun contactRepository(): ContactRepository
+    abstract fun contactRepository(): DeliveryRepositories
 
     companion object {
         @Volatile
@@ -47,4 +45,4 @@ abstract class AppDatabase : RoomDatabase() {
         }
 
     }
-}*/
+}
