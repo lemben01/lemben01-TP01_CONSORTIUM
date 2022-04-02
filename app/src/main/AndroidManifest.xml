@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CONSORTIUM">
         <activity
-            android:name=".presentation.ui.splash.SplashActivityMain"
+            android:name=".presentation.ui.deliveries.NewDeliveryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.ui.deliveries.DeliveriesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.ui.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

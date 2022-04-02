@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import ca.qc.cstj.consortium.core.Constants
-import ca.qc.cstj.consortium.data.repositories.DeliveryRepositories
+import ca.qc.cstj.consortium.data.repositories.DeliveryRepository
 import ca.qc.cstj.consortium.domain.models.Delivery
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -18,7 +18,7 @@ abstract class AppDatabase : RoomDatabase() {
 
     //TODO: Add Rooms Repository (DAO) here
     //abstract fun zzzRepository(): zzzRepository
-    abstract fun contactRepository(): DeliveryRepositories
+    abstract fun deliveryRepository(): DeliveryRepository
 
     companion object {
         @Volatile

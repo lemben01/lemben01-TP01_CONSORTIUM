@@ -1,10 +1,7 @@
 package ca.qc.cstj.consortium.data.repositories
 
 import android.content.Context
-import androidx.datastore.preferences.core.booleanPreferencesKey
-import androidx.datastore.preferences.core.floatPreferencesKey
-import androidx.datastore.preferences.core.intPreferencesKey
-import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.core.*
 import androidx.datastore.preferences.preferencesDataStore
 import ca.qc.cstj.consortium.domain.models.Trader
 import kotlinx.coroutines.flow.Flow
@@ -17,7 +14,7 @@ class TraderRepository(private val context: Context) {
     object PreferencesKeys {
         val TRADER_NAME = stringPreferencesKey("trader_name")
         val EPLIL = floatPreferencesKey("eplil")
-        val AWHIL = floatPreferencesKey("Awhil")
+        val AWHIL = floatPreferencesKey("awhil")
         val VETHYX = floatPreferencesKey("vethyx")
         val LASPYX = floatPreferencesKey("laspyx")
         val SMIATHIL = floatPreferencesKey("smiathil")
@@ -32,5 +29,16 @@ class TraderRepository(private val context: Context) {
         val smiathil = preferences[PreferencesKeys.SMIATHIL] ?: 200F
 
         Trader(traderName, eplil, awhil, vethyx, laspyx, smiathil)
+    }
+
+    suspend fun chargerCargaison(eplil : Float, awhil : Float, vethyx : Float, laspyx : Float, smiathil : Float){
+
+        context.dataStore.edit { preferences ->
+            preferences[PreferencesKeys.EPLIL] = eplil
+            preferences[PreferencesKeys.AWHIL] = awhil
+            preferences[PreferencesKeys.VETHYX] = vethyx
+            preferences[PreferencesKeys.LASPYX] = laspyx
+            preferences[PreferencesKeys.SMIATHIL] = smiathil
+        }
     }
 }

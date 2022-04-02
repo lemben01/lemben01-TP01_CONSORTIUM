@@ -5,7 +5,7 @@ import ca.qc.cstj.consortium.domain.models.Delivery
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface DeliveryRepositories {
+interface DeliveryRepository {
     @Query("SELECT * FROM deliveries")
     fun retrieveAll() : Flow<List<Delivery>>
 

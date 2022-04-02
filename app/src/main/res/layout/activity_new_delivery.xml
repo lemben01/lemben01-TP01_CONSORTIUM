@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/titre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:textSize="32dp"
+        android:text="Livraison"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--Slider Eplil-->
+    <ImageView
+        android:id="@+id/imgEplil"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titre"
+        app:srcCompat="@drawable/e" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sldEplil"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:stepSize="1.0"
+        android:value="3.0"
+        android:valueFrom="1.0"
+        android:valueTo="5.0"
+        app:layout_constraintStart_toEndOf="@+id/imgEplil"
+        app:layout_constraintTop_toTopOf="@+id/imgEplil" />
+
+    <TextView
+        android:id="@+id/txtQuantityEplil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/imgEplil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sldEplil"
+        app:layout_constraintTop_toTopOf="@+id/imgEplil" />
+
+    <TextView
+        android:id="@+id/txtNameEplil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eplil"
+        app:layout_constraintEnd_toEndOf="@+id/imgEplil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgEplil" />
+
+
+    <!--Slider Awhil-->
+    <ImageView
+        android:id="@+id/imgAwhil"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNameEplil"
+        app:srcCompat="@drawable/a" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sldAwhil"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:stepSize="1.0"
+        android:value="3.0"
+        android:valueFrom="1.0"
+        android:valueTo="5.0"
+        app:layout_constraintStart_toEndOf="@+id/imgAwhil"
+        app:layout_constraintTop_toTopOf="@+id/imgAwhil" />
+
+    <TextView
+        android:id="@+id/txtQuantityAwhil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/imgAwhil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sldAwhil"
+        app:layout_constraintTop_toTopOf="@+id/imgAwhil" />
+
+    <TextView
+        android:id="@+id/txtNameAwhil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Awhil"
+        app:layout_constraintEnd_toEndOf="@+id/imgAwhil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgAwhil" />
+
+
+    <!--Slider Vethyx-->
+    <ImageView
+        android:id="@+id/imgVethyx"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNameAwhil"
+        app:srcCompat="@drawable/ve" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sldVethyx"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:stepSize="1.0"
+        android:value="3.0"
+        android:valueFrom="1.0"
+        android:valueTo="5.0"
+        app:layout_constraintStart_toEndOf="@+id/imgVethyx"
+        app:layout_constraintTop_toTopOf="@+id/imgVethyx" />
+
+    <TextView
+        android:id="@+id/txtQuantityVethyx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/imgVethyx"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sldVethyx"
+        app:layout_constraintTop_toTopOf="@+id/imgVethyx" />
+
+    <TextView
+        android:id="@+id/txtNameVethyx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vethyx"
+        app:layout_constraintEnd_toEndOf="@+id/imgVethyx"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgVethyx" />
+
+
+    <!--Slider Laspyx-->
+    <ImageView
+        android:id="@+id/imgLaspyx"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNameVethyx"
+        app:srcCompat="@drawable/i" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sldLaspyx"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:stepSize="1.0"
+        android:value="3.0"
+        android:valueFrom="1.0"
+        android:valueTo="5.0"
+        app:layout_constraintStart_toEndOf="@+id/imgLaspyx"
+        app:layout_constraintTop_toTopOf="@+id/imgLaspyx" />
+
+    <TextView
+        android:id="@+id/txtQuantityLaspyx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/imgLaspyx"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sldLaspyx"
+        app:layout_constraintTop_toTopOf="@+id/imgLaspyx" />
+
+    <TextView
+        android:id="@+id/txtNameLaspyx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Laspyx"
+        app:layout_constraintEnd_toEndOf="@+id/imgLaspyx"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLaspyx" />
+
+
+    <!--Slider Smiathil-->
+    <ImageView
+        android:id="@+id/imgSmiathil"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNameLaspyx"
+        app:srcCompat="@drawable/sm" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sldSmiathil"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:stepSize="1.0"
+        android:value="3.0"
+        android:valueFrom="1.0"
+        android:valueTo="5.0"
+        app:layout_constraintStart_toEndOf="@+id/imgSmiathil"
+        app:layout_constraintTop_toTopOf="@+id/imgSmiathil" />
+
+    <TextView
+        android:id="@+id/txtQuantitySmiathil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/imgSmiathil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sldSmiathil"
+        app:layout_constraintTop_toTopOf="@+id/imgSmiathil" />
+
+    <TextView
+        android:id="@+id/txtNameSmiathil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Smiathil"
+        app:layout_constraintEnd_toEndOf="@+id/imgSmiathil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgSmiathil" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_save_24" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

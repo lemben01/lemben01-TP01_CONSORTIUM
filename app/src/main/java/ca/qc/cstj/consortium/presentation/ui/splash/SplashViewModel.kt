@@ -10,7 +10,7 @@ import ca.qc.cstj.consortium.domain.models.Trader
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
-class SplashMainViewModel(application: Application) : AndroidViewModel(application) {
+class SplashViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _trader = MutableLiveData<Trader>()
     val trader : LiveData<Trader> get() = _trader
@@ -25,5 +25,18 @@ class SplashMainViewModel(application: Application) : AndroidViewModel(applicati
             }
         }
     }
+
+    fun chargerCargaison(eplil : Float, awhil : Float, vethyx : Float, laspyx : Float, smiathil : Float) {
+        viewModelScope.launch {
+            var elementEplil = _trader.value!!.eplil + eplil
+            var elementAwhil = _trader.value!!.awhil + awhil
+            var elementVethyx = _trader.value!!.vethyx + vethyx
+            var elementLaspyx = _trader.value!!.laspyx + laspyx
+            var elementSmiathil = _trader.value!!.smiathil + smiathil
+
+            traderRepository.chargerCargaison(elementEplil, elementAwhil, elementVethyx, elementLaspyx, elementSmiathil)
+        }
+    }
+
 
 }
