@@ -38,5 +38,11 @@ class SplashViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
+    fun save(nomMarchand : String){
+       viewModelScope.launch {
+           traderRepository.save(nomMarchand)
+       }
+    }
+
 
 }

@@ -6,5 +6,7 @@ import androidx.room.Entity
 
 data class Trader (var name:String, var eplil:Float, var awhil:Float, var vethyx:Float,
     var laspyx:Float, var smiathil:Float) {
+    val msgBonjour: String get() = "Bon retour" + "$name"
+
 
 }

@@ -32,10 +32,7 @@
         android:layout_width="250dp"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
-        android:stepSize="1.0"
-        android:value="3.0"
-        android:valueFrom="1.0"
-        android:valueTo="5.0"
+        android:valueFrom="0.0"
         app:layout_constraintStart_toEndOf="@+id/imgEplil"
         app:layout_constraintTop_toTopOf="@+id/imgEplil" />
 
@@ -73,10 +70,7 @@
         android:layout_width="250dp"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
-        android:stepSize="1.0"
-        android:value="3.0"
-        android:valueFrom="1.0"
-        android:valueTo="5.0"
+        android:valueFrom="0.0"
         app:layout_constraintStart_toEndOf="@+id/imgAwhil"
         app:layout_constraintTop_toTopOf="@+id/imgAwhil" />
 
@@ -114,10 +108,7 @@
         android:layout_width="250dp"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
-        android:stepSize="1.0"
-        android:value="3.0"
-        android:valueFrom="1.0"
-        android:valueTo="5.0"
+        android:valueFrom="0.0"
         app:layout_constraintStart_toEndOf="@+id/imgVethyx"
         app:layout_constraintTop_toTopOf="@+id/imgVethyx" />
 
@@ -155,10 +146,7 @@
         android:layout_width="250dp"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
-        android:stepSize="1.0"
-        android:value="3.0"
-        android:valueFrom="1.0"
-        android:valueTo="5.0"
+        android:valueFrom="0.0"
         app:layout_constraintStart_toEndOf="@+id/imgLaspyx"
         app:layout_constraintTop_toTopOf="@+id/imgLaspyx" />
 
@@ -196,10 +184,7 @@
         android:layout_width="250dp"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
-        android:stepSize="1.0"
-        android:value="3.0"
-        android:valueFrom="1.0"
-        android:valueTo="5.0"
+        android:valueFrom="0.0"
         app:layout_constraintStart_toEndOf="@+id/imgSmiathil"
         app:layout_constraintTop_toTopOf="@+id/imgSmiathil" />
 

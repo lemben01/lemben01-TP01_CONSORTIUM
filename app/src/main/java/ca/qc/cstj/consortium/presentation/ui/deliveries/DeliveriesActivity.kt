@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import ca.qc.cstj.consortium.R
 import ca.qc.cstj.consortium.databinding.ActivityDeliveriesBinding
 import ca.qc.cstj.consortium.presentation.ui.new_delivery.NewDeliveryActivity
 
@@ -35,11 +36,17 @@ class DeliveriesActivity : AppCompatActivity() {
             startActivity(NewDeliveryActivity.newIntent(this))
         }
 
+        binding.txtTraderName.text = getString(R.string.bonRetour, intent.getStringExtra("TRADER_NAME"))
+
+
     }
 
     companion object {
-        fun newIntent(context: Context): Intent {
-            return Intent(context, DeliveriesActivity::class.java)
+        fun newIntent(context: Context, traderName: String): Intent {
+            val traderName = traderName
+            val intent = Intent(context, DeliveriesActivity::class.java)
+            intent.putExtra("TRADER_NAME", traderName)
+            return intent
         }
     }
 }

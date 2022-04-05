@@ -2,6 +2,7 @@ package ca.qc.cstj.consortium.presentation.ui.splash
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import ca.qc.cstj.consortium.databinding.SplashActivityBinding
 import ca.qc.cstj.consortium.presentation.ui.deliveries.DeliveriesActivity
@@ -18,12 +19,17 @@ class SplashActivity : AppCompatActivity() {
 
 
         viewModel.trader.observe(this) {
-            binding.txtEplil.text = it.eplil.toString()
-            binding.txtAwhil.text = it.awhil.toString()
-            binding.txtVethyx.text = it.vethyx.toString()
-            binding.textLaspyx.text = it.laspyx.toString()
-            binding.txtSmiathil.text = it.smiathil.toString()
+            with(binding){
+                txtEplil.text = it.eplil.toString()
+                txtAwhil.text = it.awhil.toString()
+                txtVethyx.text = it.vethyx.toString()
+                textLaspyx.text = it.laspyx.toString()
+                txtSmiathil.text = it.smiathil.toString()
+            }
+
         }
+
+
 
         binding.btnChargement.setOnClickListener {
 
@@ -37,9 +43,17 @@ class SplashActivity : AppCompatActivity() {
         }
 
         binding.btnOuvrir.setOnClickListener {
-            startActivity(DeliveriesActivity.newIntent(this))
+            var traderName = binding.nomMarchand.editText!!.text.toString()
+
+            if(traderName == "")
+                Toast.makeText(this, "le champ nom ne peut être null", Toast.LENGTH_SHORT).show()
+            else {
+                viewModel.save(traderName)
+                startActivity(DeliveriesActivity.newIntent(this, traderName))
+            }
+
+
         }
     }
-
 
 }

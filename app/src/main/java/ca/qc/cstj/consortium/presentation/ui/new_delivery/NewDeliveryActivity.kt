@@ -34,8 +34,30 @@ class NewDeliveryActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        viewModel.deliveries.observe(this) {
+        viewModel.trader.observe(this) {
+            with(binding)
+            {
+                txtQuantityEplil.text = it.eplil.toString()
+                txtQuantityAwhil.text = it.awhil.toString()
+                txtQuantityVethyx.text = it.vethyx.toString()
+                txtQuantityLaspyx.text = it.laspyx.toString()
+                txtQuantitySmiathil.text = it.smiathil.toString()
+            }
 
+            //TODO: vider les slider avant de rentrer dans le binding
+
+            with(binding) {
+                sldEplil.addOnChangeListener {_, valSlider,_ ->
+                    var elementEplil = valSlider }
+                sldAwhil.addOnChangeListener {_, valSlider,_ ->
+                    var elementAwhil = valSlider }
+                sldVethyx.addOnChangeListener {_, valSlider,_ ->
+                    var elementVethyx = valSlider }
+                sldLaspyx.addOnChangeListener {_, valSlider,_ ->
+                    var elementLaspyx = valSlider }
+                sldSmiathil.addOnChangeListener {_, valSlider,_ ->
+                    var elementSmiathil = valSlider }
+            }
         }
 
 
@@ -43,7 +65,7 @@ class NewDeliveryActivity : AppCompatActivity() {
 
     companion object {
         fun newIntent(context: Context): Intent {
-            return Intent(context, DeliveriesActivity::class.java)
+            return Intent(context, NewDeliveryActivity::class.java)
         }
     }
 }

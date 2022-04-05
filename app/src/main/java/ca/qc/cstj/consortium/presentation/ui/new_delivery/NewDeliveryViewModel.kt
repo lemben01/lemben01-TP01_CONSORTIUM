@@ -7,21 +7,23 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import ca.qc.cstj.consortium.data.AppDatabase
 import ca.qc.cstj.consortium.data.repositories.DeliveryRepository
+import ca.qc.cstj.consortium.data.repositories.TraderRepository
 import ca.qc.cstj.consortium.domain.models.Delivery
+import ca.qc.cstj.consortium.domain.models.Trader
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class NewDeliveryViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val _deliveries = MutableLiveData<List<Delivery>>()
-    val deliveries: LiveData<List<Delivery>> get() = _deliveries
+    private val _trader = MutableLiveData<Trader>()
+    val trader : LiveData<Trader> get() = _trader
 
-    private val deliveryRepository = AppDatabase.getDatabase(application).deliveryRepository()
+    private val traderRepository = TraderRepository(application)
 
     init {
         viewModelScope.launch {
-            deliveryRepository.retrieveAll().collect {
-                _deliveries.value = it
+            traderRepository.trader.collect {
+                _trader.value = it
             }
         }
     }

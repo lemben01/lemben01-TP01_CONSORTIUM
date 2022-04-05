@@ -4,5 +4,5 @@
     <string name="ouvrir">OUVRIR</string>
     <string name="chargement">CHARGEMENT</string>
     <string name="televerser">TÉLÉVERSER</string>
-    <string name="bonRetour">Bon retour Benjamin</string>
+    <string name="bonRetour">Bon retour %s</string>
 </resources>
