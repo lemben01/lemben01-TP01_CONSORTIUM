@@ -3,9 +3,8 @@ package ca.qc.cstj.consortium.presentation.ui.splash
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.lifecycle.ViewModel
-import ca.qc.cstj.consortium.databinding.NewDeliveryActivityBinding
 import ca.qc.cstj.consortium.databinding.SplashActivityBinding
+import ca.qc.cstj.consortium.presentation.ui.deliveries.DeliveriesActivity
 import kotlin.random.Random
 
 class SplashActivity : AppCompatActivity() {
@@ -37,9 +36,9 @@ class SplashActivity : AppCompatActivity() {
             viewModel.chargerCargaison(elementEplil, elementAwhil, elementVethyx, elementLaspyx, elementSmiathil)
         }
 
-        /*binding.btnOuvrir.setOnClickListener {
-            startActivity()
-        }*/
+        binding.btnOuvrir.setOnClickListener {
+            startActivity(DeliveriesActivity.newIntent(this))
+        }
     }
 
 

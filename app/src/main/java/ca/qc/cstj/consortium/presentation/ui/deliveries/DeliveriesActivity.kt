@@ -7,13 +7,15 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import ca.qc.cstj.consortium.databinding.ActivityDeliveriesBinding
-import ca.qc.cstj.consortium.presentation.adapters.DeliveryRecyclerViewAdapter
+import ca.qc.cstj.consortium.presentation.ui.new_delivery.NewDeliveryActivity
 
 
 class DeliveriesActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityDeliveriesBinding
     private val viewModel: DeliveriesViewModel by viewModels()
+
+    //private lateinit var deliveryRecyclerViewAdapter: DeliveryRecyclerViewAdapter
 
 
 
@@ -23,11 +25,15 @@ class DeliveriesActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        viewModel.deliveries.observe(this) {
-                
+        /*viewModel.deliveries.observe(this) {
+            deliveryRecyclerViewAdapter.differ.su
+        }*/
+
+
+        //TODO: afficher l'ecran pour passer des commandes
+        binding.btnAjouter.setOnClickListener {
+            startActivity(NewDeliveryActivity.newIntent(this))
         }
-
-
 
     }
 

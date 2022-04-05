@@ -1,5 +1,16 @@
-/*
-package ca.qc.cstj.consortium.presentation.ui.deliveries
+/*package ca.qc.cstj.consortium.presentation.ui.deliveries
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+
+class NewDeliveryActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.new_delivery_activity)
+    }
+}*/
+
+package ca.qc.cstj.consortium.presentation.ui.new_delivery
 
 import android.content.Context
 import android.content.Intent
@@ -7,13 +18,13 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import ca.qc.cstj.consortium.databinding.NewDeliveryActivityBinding
-import ca.qc.cstj.consortium.presentation.adapters.DeliveryRecyclerViewAdapter
+import ca.qc.cstj.consortium.presentation.ui.deliveries.DeliveriesActivity
 
 
-class DeliveriesActivity : AppCompatActivity() {
+class NewDeliveryActivity : AppCompatActivity() {
 
-    private lateinit var binding : 
-    private val viewModel: DeliveriesActivity by viewModels()
+    private lateinit var binding : NewDeliveryActivityBinding
+    private val viewModel: NewDeliveryViewModel by viewModels()
 
 
 
@@ -24,7 +35,7 @@ class DeliveriesActivity : AppCompatActivity() {
 
 
         viewModel.deliveries.observe(this) {
-                
+
         }
 
 
@@ -35,4 +46,4 @@ class DeliveriesActivity : AppCompatActivity() {
             return Intent(context, DeliveriesActivity::class.java)
         }
     }
-}*/
+}
