@@ -50,46 +50,46 @@
 
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/itemEplil"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_marginStart="8dp"
-                app:layout_constraintEnd_toStartOf="@+id/imageView3"
+                app:layout_constraintEnd_toStartOf="@+id/itemAwhil"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/e" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/itemAwhil"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                app:layout_constraintEnd_toStartOf="@+id/imageView4"
-                app:layout_constraintTop_toTopOf="@+id/imageView2"
+                app:layout_constraintEnd_toStartOf="@+id/itemVethyx"
+                app:layout_constraintTop_toTopOf="@+id/itemEplil"
                 app:srcCompat="@drawable/a" />
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/itemVethyx"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                app:layout_constraintEnd_toStartOf="@+id/imageView5"
-                app:layout_constraintTop_toTopOf="@+id/imageView2"
+                app:layout_constraintEnd_toStartOf="@+id/itemLaspyx"
+                app:layout_constraintTop_toTopOf="@+id/itemEplil"
                 app:srcCompat="@drawable/ve" />
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/itemLaspyx"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                app:layout_constraintEnd_toStartOf="@+id/imageView6"
-                app:layout_constraintTop_toTopOf="@+id/imageView2"
+                app:layout_constraintEnd_toStartOf="@+id/itemSmiathil"
+                app:layout_constraintTop_toTopOf="@+id/itemEplil"
                 app:srcCompat="@drawable/i" />
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/itemSmiathil"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_marginEnd="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="@+id/itemEplil"
                 app:srcCompat="@drawable/sm" />
 
             <TextView
@@ -97,45 +97,45 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="nb"
-                app:layout_constraintEnd_toEndOf="@+id/imageView2"
-                app:layout_constraintStart_toStartOf="@+id/imageView2"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                app:layout_constraintEnd_toEndOf="@+id/itemEplil"
+                app:layout_constraintStart_toStartOf="@+id/itemEplil"
+                app:layout_constraintTop_toBottomOf="@+id/itemEplil" />
 
             <TextView
                 android:id="@+id/txtAwhil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="nb"
-                app:layout_constraintEnd_toEndOf="@+id/imageView3"
-                app:layout_constraintStart_toEndOf="@+id/imageView2"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                app:layout_constraintEnd_toEndOf="@+id/itemAwhil"
+                app:layout_constraintStart_toEndOf="@+id/itemEplil"
+                app:layout_constraintTop_toBottomOf="@+id/itemAwhil" />
 
             <TextView
                 android:id="@+id/txtVethyx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="nb"
-                app:layout_constraintEnd_toEndOf="@+id/imageView4"
-                app:layout_constraintStart_toEndOf="@+id/imageView3"
-                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+                app:layout_constraintEnd_toEndOf="@+id/itemVethyx"
+                app:layout_constraintStart_toEndOf="@+id/itemAwhil"
+                app:layout_constraintTop_toBottomOf="@+id/itemVethyx" />
 
             <TextView
                 android:id="@+id/textLaspyx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="nb"
-                app:layout_constraintEnd_toEndOf="@+id/imageView5"
-                app:layout_constraintStart_toEndOf="@+id/imageView4"
-                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+                app:layout_constraintEnd_toEndOf="@+id/itemLaspyx"
+                app:layout_constraintStart_toEndOf="@+id/itemVethyx"
+                app:layout_constraintTop_toBottomOf="@+id/itemLaspyx" />
 
             <TextView
                 android:id="@+id/txtSmiathil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="nb"
-                app:layout_constraintEnd_toEndOf="@+id/imageView6"
-                app:layout_constraintStart_toEndOf="@+id/imageView5"
-                app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+                app:layout_constraintEnd_toEndOf="@+id/itemSmiathil"
+                app:layout_constraintStart_toEndOf="@+id/itemLaspyx"
+                app:layout_constraintTop_toBottomOf="@+id/itemSmiathil" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

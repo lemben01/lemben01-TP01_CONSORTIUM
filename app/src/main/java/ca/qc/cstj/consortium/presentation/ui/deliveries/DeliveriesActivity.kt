@@ -6,8 +6,13 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import ca.qc.cstj.consortium.R
+import ca.qc.cstj.consortium.core.notifyAllItemChanged
 import ca.qc.cstj.consortium.databinding.ActivityDeliveriesBinding
+import ca.qc.cstj.consortium.presentation.adapters.DeliveryRecyclerViewAdapter
 import ca.qc.cstj.consortium.presentation.ui.new_delivery.NewDeliveryActivity
 
 
@@ -16,7 +21,7 @@ class DeliveriesActivity : AppCompatActivity() {
     private lateinit var binding : ActivityDeliveriesBinding
     private val viewModel: DeliveriesViewModel by viewModels()
 
-    //private lateinit var deliveryRecyclerViewAdapter: DeliveryRecyclerViewAdapter
+    private lateinit var deliveryRecyclerViewAdapter: DeliveryRecyclerViewAdapter
 
 
 
@@ -26,12 +31,15 @@ class DeliveriesActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        /*viewModel.deliveries.observe(this) {
-            deliveryRecyclerViewAdapter.differ.su
-        }*/
+        deliveryRecyclerViewAdapter = DeliveryRecyclerViewAdapter(listOf())
+        binding.rcvDelivery.adapter = deliveryRecyclerViewAdapter
+        binding.rcvDelivery.layoutManager = LinearLayoutManager(this)
 
+        viewModel.deliveries.observe(this){
+            deliveryRecyclerViewAdapter.deliveries = it
+            deliveryRecyclerViewAdapter.notifyAllItemChanged()
+        }
 
-        //TODO: afficher l'ecran pour passer des commandes
         binding.btnAjouter.setOnClickListener {
             startActivity(NewDeliveryActivity.newIntent(this))
         }

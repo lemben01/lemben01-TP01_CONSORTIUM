@@ -6,11 +6,11 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "deliveries")
 data class Delivery (
-    @ColumnInfo(name="eplil") var eplil: Float,
-    @ColumnInfo(name="Awhil") var Awhil: Float,
-    @ColumnInfo(name="vethyx") var vethyx: Float,
-    @ColumnInfo(name="laspyx") var laspyx: Float,
-    @ColumnInfo(name="smiathil") var smiathil: Float,
+    @ColumnInfo(name="eplil") var eplil:  Float = 0.0F,
+    @ColumnInfo(name="Awhil") var awhil: Float = 0.0F,
+    @ColumnInfo(name="vethyx") var vethyx: Float = 0.0F,
+    @ColumnInfo(name="laspyx") var laspyx: Float = 0.0F,
+    @ColumnInfo(name="smiathil") var smiathil: Float = 0.0F,
 
     ) {
     @PrimaryKey(autoGenerate = true) var idDelivery : Int = 0
