@@ -29,41 +29,8 @@ class NewDeliveryActivity : AppCompatActivity() {
             sldSmiathil.value = 0F
         }
 
+
         viewModel.trader.observe(this) {
-            with(binding)
-            {
-                txtQuantityEplil.text = it.eplil.toString()
-                txtQuantityAwhil.text = it.awhil.toString()
-                txtQuantityVethyx.text = it.vethyx.toString()
-                txtQuantityLaspyx.text = it.laspyx.toString()
-                txtQuantitySmiathil.text = it.smiathil.toString()
-            }
-
-            //TODO: vider les slider avant de rentrer dans le binding
-
-            with(binding) {
-                sldEplil.addOnChangeListener {_, valSlider,_ ->
-                    var elementEplil = viewModel.setElementQuantity(Constants.Elements.EPLIL, valSlider)
-                }
-                sldAwhil.addOnChangeListener {_, valSlider,_ ->
-                    var elementAwhil = viewModel.setElementQuantity(Constants.Elements.AWHIL, valSlider)
-                }
-                sldVethyx.addOnChangeListener {_, valSlider,_ ->
-                    var elementVethyx = viewModel.setElementQuantity(Constants.Elements.VETHYX, valSlider)
-                }
-                sldLaspyx.addOnChangeListener {_, valSlider,_ ->
-                    var elementLaspyx = viewModel.setElementQuantity(Constants.Elements.LASPYX, valSlider)
-                }
-                sldSmiathil.addOnChangeListener {_, valSlider,_ ->
-                    var elementSmiathil = viewModel.setElementQuantity(Constants.Elements.SMIATHIL, valSlider)
-                }
-
-            }
-            binding.btnSaveDelivery.setOnClickListener{
-                var delivery = Delivery(binding.sldEplil.value, binding.sldAwhil.value, binding.sldVethyx.value, binding.sldLaspyx.value, binding.sldSmiathil.value)
-                viewModel.createDelivery(delivery)
-                finish()
-            }
             with(binding)
             {
                 sldEplil.value = 0F
@@ -82,12 +49,33 @@ class NewDeliveryActivity : AppCompatActivity() {
                 sldSmiathil.valueTo = it.smiathil
             }
 
-            viewModel.deleteQuantity(binding.sldEplil.value, binding.sldAwhil.value, binding.sldVethyx.value, binding.sldLaspyx.value, binding.sldSmiathil.value)
-            viewModel.saveDelivery(binding.sldEplil.value, binding.sldAwhil.value, binding.sldVethyx.value, binding.sldLaspyx.value, binding.sldSmiathil.value)
+            with(binding) {
+                sldEplil.addOnChangeListener {_, valSlider,_ ->
+                    txtQuantityEplil.text = String.format("%.2f", valSlider)
+                }
+                sldAwhil.addOnChangeListener {_, valSlider,_ ->
+                    txtQuantityAwhil.text = String.format("%.2f", valSlider)
+                }
+                sldVethyx.addOnChangeListener {_, valSlider,_ ->
+                    txtQuantityVethyx.text = String.format("%.2f", valSlider)
+                }
+                sldLaspyx.addOnChangeListener {_, valSlider,_ ->
+                    txtQuantityLaspyx.text = String.format("%.2f", valSlider)
+                }
+                sldSmiathil.addOnChangeListener {_, valSlider,_ ->
+                    txtQuantitySmiathil.text = String.format("%.2f", valSlider)
+                }
 
+            }
 
+            binding.btnSaveDelivery.setOnClickListener{
+                var delivery = Delivery(binding.sldEplil.value, binding.sldAwhil.value, binding.sldVethyx.value, binding.sldLaspyx.value, binding.sldSmiathil.value)
+                viewModel.createDelivery(delivery)
+                viewModel.deleteQuantity(binding.sldEplil.value, binding.sldAwhil.value, binding.sldVethyx.value, binding.sldLaspyx.value, binding.sldSmiathil.value)
+                viewModel.saveDelivery(binding.sldEplil.value, binding.sldAwhil.value, binding.sldVethyx.value, binding.sldLaspyx.value, binding.sldSmiathil.value)
+                finish()
+            }
         }
-
     }
 
     companion object {

@@ -34,7 +34,7 @@ class NewDeliveryViewModel(application: Application) : AndroidViewModel(applicat
         }
     }
 
-    fun setElementQuantity(nomElement: Constants.Elements, nb : Float) {
+    /*fun setElementQuantity(nomElement: Constants.Elements, nb : Float) {
         when(nomElement){
             Constants.Elements.EPLIL -> delivery.eplil = nb
             Constants.Elements.AWHIL -> delivery.awhil = nb
@@ -42,7 +42,7 @@ class NewDeliveryViewModel(application: Application) : AndroidViewModel(applicat
             Constants.Elements.LASPYX -> delivery.laspyx = nb
             Constants.Elements.SMIATHIL -> delivery.smiathil = nb
         }
-    }
+    }*/
 
     fun createDelivery(delivery: Delivery) {
         viewModelScope.launch {
