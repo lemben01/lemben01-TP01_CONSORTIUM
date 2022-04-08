@@ -5,12 +5,15 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import ca.qc.cstj.consortium.databinding.SplashActivityBinding
+import ca.qc.cstj.consortium.presentation.adapters.DeliveryRecyclerViewAdapter
 import ca.qc.cstj.consortium.presentation.ui.deliveries.DeliveriesActivity
 import kotlin.random.Random
 
 class SplashActivity : AppCompatActivity() {
     private lateinit var  binding : SplashActivityBinding
     private val viewModel: SplashViewModel by viewModels()
+
+    private lateinit var deliveryRecyclerViewAdapter: DeliveryRecyclerViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +57,9 @@ class SplashActivity : AppCompatActivity() {
 
 
         }
-    }
 
+        binding.btnTeleverser.setOnClickListener {
+            viewModel.deleteDeliveries()
+        }
+    }
 }

@@ -5,7 +5,9 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import ca.qc.cstj.consortium.data.AppDatabase
 import ca.qc.cstj.consortium.data.repositories.TraderRepository
+import ca.qc.cstj.consortium.domain.models.Delivery
 import ca.qc.cstj.consortium.domain.models.Trader
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -14,6 +16,9 @@ class SplashViewModel(application: Application) : AndroidViewModel(application) 
 
     private val _trader = MutableLiveData<Trader>()
     val trader : LiveData<Trader> get() = _trader
+
+    private val deliveryRepository = AppDatabase.getDatabase(application).deliveryRepository()
+
 
     private val traderRepository = TraderRepository(application)
 
@@ -37,11 +42,16 @@ class SplashViewModel(application: Application) : AndroidViewModel(application) 
             traderRepository.chargerCargaison(elementEplil, elementAwhil, elementVethyx, elementLaspyx, elementSmiathil)
         }
     }
-
     fun save(nomMarchand : String){
        viewModelScope.launch {
            traderRepository.save(nomMarchand)
        }
+    }
+
+    fun deleteDeliveries() {
+        viewModelScope.launch {
+            deliveryRepository.deleteAll()
+        }
     }
 
 

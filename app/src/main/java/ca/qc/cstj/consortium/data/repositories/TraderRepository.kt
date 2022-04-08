@@ -45,6 +45,7 @@ class TraderRepository(private val context: Context) {
     suspend fun save(traderName:String) {
         context.dataStore.edit { preferences ->
             preferences[PreferencesKeys.TRADER_NAME] = traderName
+
         }
     }
 }

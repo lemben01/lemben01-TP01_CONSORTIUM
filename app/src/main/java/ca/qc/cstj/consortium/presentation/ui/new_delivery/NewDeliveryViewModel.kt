@@ -44,9 +44,30 @@ class NewDeliveryViewModel(application: Application) : AndroidViewModel(applicat
         }
     }
 
-    fun saveDelivery(delivery: Delivery) {
+    fun createDelivery(delivery: Delivery) {
         viewModelScope.launch {
             deliveryRepository.create(delivery)
         }
     }
+
+    fun deleteQuantity(eplil : Float, awhil : Float, vethyx : Float, laspyx : Float, smiathil : Float,) {
+        _trader.value!!.eplil -= eplil
+        _trader.value!!.awhil -= awhil
+        _trader.value!!.vethyx -= vethyx
+        _trader.value!!.laspyx -= laspyx
+        _trader.value!!.smiathil -= smiathil
+    }
+
+    fun saveDelivery(eplil : Float, awhil : Float, vethyx : Float, laspyx : Float, smiathil : Float) {
+        viewModelScope.launch {
+            var elementEplil = _trader.value!!.eplil + eplil
+            var elementAwhil = _trader.value!!.awhil + awhil
+            var elementVethyx = _trader.value!!.vethyx + vethyx
+            var elementLaspyx = _trader.value!!.laspyx + laspyx
+            var elementSmiathil = _trader.value!!.smiathil + smiathil
+
+            traderRepository.chargerCargaison(elementEplil, elementAwhil, elementVethyx, elementLaspyx, elementSmiathil)
+        }
+    }
+
 }

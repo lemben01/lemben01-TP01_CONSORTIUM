@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import ca.qc.cstj.consortium.core.Constants
 import ca.qc.cstj.consortium.databinding.NewDeliveryActivityBinding
 import ca.qc.cstj.consortium.domain.models.Delivery
-import ca.qc.cstj.consortium.presentation.ui.deliveries.DeliveriesActivity
 
 
 class NewDeliveryActivity : AppCompatActivity() {
@@ -62,7 +61,7 @@ class NewDeliveryActivity : AppCompatActivity() {
             }
             binding.btnSaveDelivery.setOnClickListener{
                 var delivery = Delivery(binding.sldEplil.value, binding.sldAwhil.value, binding.sldVethyx.value, binding.sldLaspyx.value, binding.sldSmiathil.value)
-                viewModel.saveDelivery(delivery)
+                viewModel.createDelivery(delivery)
                 finish()
             }
             with(binding)
@@ -83,8 +82,12 @@ class NewDeliveryActivity : AppCompatActivity() {
                 sldSmiathil.valueTo = it.smiathil
             }
 
+            viewModel.deleteQuantity(binding.sldEplil.value, binding.sldAwhil.value, binding.sldVethyx.value, binding.sldLaspyx.value, binding.sldSmiathil.value)
+            viewModel.saveDelivery(binding.sldEplil.value, binding.sldAwhil.value, binding.sldVethyx.value, binding.sldLaspyx.value, binding.sldSmiathil.value)
+
 
         }
+
     }
 
     companion object {

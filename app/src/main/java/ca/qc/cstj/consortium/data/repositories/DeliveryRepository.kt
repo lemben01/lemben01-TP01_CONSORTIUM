@@ -10,16 +10,7 @@ interface DeliveryRepository {
     fun retrieveAll() : Flow<List<Delivery>>
 
     @Insert
-    suspend fun create(deliveries: List<Delivery>)
-
-    @Insert
     suspend fun create(delivery: Delivery)
-
-    @Delete
-    suspend fun delete(delivery: Delivery)
-
-    @Update
-    suspend fun update(delivery: Delivery)
 
     @Query("DELETE FROM deliveries")
     suspend fun deleteAll()

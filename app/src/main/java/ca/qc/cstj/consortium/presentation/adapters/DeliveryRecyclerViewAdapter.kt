@@ -30,11 +30,11 @@ class DeliveryRecyclerViewAdapter(var deliveries: List<Delivery>)
 
         fun bind(delivery: Delivery){
             with(binding){
-                txtNbEplil.text = delivery.eplil.toString()
-                txtNbAwhil.text = delivery.awhil.toString()
-                txtNbVethyx.text = delivery.vethyx.toString()
-                txtNbLaspyx.text = delivery.laspyx.toString()
-                txtNbSmiathil.text = delivery.smiathil.toString()
+                txtNbEplil.text = String.format("%.2f", delivery.eplil)
+                txtNbAwhil.text = String.format("%.2f", delivery.awhil)
+                txtNbVethyx.text = String.format("%.2f", delivery.vethyx)
+                txtNbLaspyx.text = String.format("%.2f", delivery.laspyx)
+                txtNbSmiathil.text = String.format("%.2f", delivery.smiathil)
             }
         }
     }

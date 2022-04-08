@@ -162,7 +162,7 @@
         android:drawableLeft="@drawable/ic_baseline_cached_24"/>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnTeleverser"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:text="@string/televerser"
@@ -170,6 +170,5 @@
         app:layout_constraintStart_toStartOf="@+id/btnChargement"
         app:layout_constraintTop_toBottomOf="@+id/btnChargement"
         android:drawableLeft="@drawable/ic_baseline_cloud_upload_24"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
