@@ -6,9 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import ca.qc.cstj.consortium.R
 import ca.qc.cstj.consortium.core.notifyAllItemChanged
 import ca.qc.cstj.consortium.databinding.ActivityDeliveriesBinding
@@ -35,15 +33,17 @@ class DeliveriesActivity : AppCompatActivity() {
         binding.rcvDelivery.adapter = deliveryRecyclerViewAdapter
         binding.rcvDelivery.layoutManager = LinearLayoutManager(this)
 
+
         viewModel.deliveries.observe(this){
             deliveryRecyclerViewAdapter.deliveries = it
             deliveryRecyclerViewAdapter.notifyAllItemChanged()
         }
 
+        //permet de changer d'activite si on clique sur le bouton pour ajouter une nouvelle commande
         binding.btnAjouter.setOnClickListener {
             startActivity(NewDeliveryActivity.newIntent(this))
         }
-
+        //permet d'ajouter le nom du marchant
         binding.txtTraderName.text = getString(R.string.bonRetour, intent.getStringExtra("TRADER_NAME"))
 
 

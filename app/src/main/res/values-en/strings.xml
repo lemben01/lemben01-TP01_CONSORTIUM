@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CONSORTIUM</string>
+    <string name="nomCommercant">Trader name</string>
+    <string name="ouvrir">OPEN</string>
+    <string name="chargement">LOADING</string>
+    <string name="televerser">UPLOAD</string>
+    <string name="bonRetour">Welcome back %s</string>
+    <string name="champNull">the name field cannot be null</string>
+    <string name="quantiteVide">The quantities of elements are all empty</string>
+    <string name="commmandeCree">The order has been sent to the Consortium Universe</string>
+    <string name="commandeSupprime">Old commands have been deleted</string>
+    <string name="livraison">Delivery</string>
+</resources>

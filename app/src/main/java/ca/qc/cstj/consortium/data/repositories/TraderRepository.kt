@@ -31,6 +31,7 @@ class TraderRepository(private val context: Context) {
         Trader(traderName, eplil, awhil, vethyx, laspyx, smiathil)
     }
 
+    //fonction qui permet de charger la cargaison
     suspend fun chargerCargaison(eplil : Float, awhil : Float, vethyx : Float, laspyx : Float, smiathil : Float){
 
         context.dataStore.edit { preferences ->
@@ -42,6 +43,7 @@ class TraderRepository(private val context: Context) {
         }
     }
 
+    //fonction qui permet de save le nom du marchand
     suspend fun save(traderName:String) {
         context.dataStore.edit { preferences ->
             preferences[PreferencesKeys.TRADER_NAME] = traderName

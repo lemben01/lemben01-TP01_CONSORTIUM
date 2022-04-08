@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">CONSORTIUM</string>
+    <string name="app_name">CONSORTIUM</string>
     <string name="nomCommercant">Nom de commerçant</string>
     <string name="ouvrir">OUVRIR</string>
     <string name="chargement">CHARGEMENT</string>

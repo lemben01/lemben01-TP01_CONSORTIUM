@@ -5,9 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import ca.qc.cstj.consortium.core.Constants
 import ca.qc.cstj.consortium.data.AppDatabase
-import ca.qc.cstj.consortium.data.repositories.DeliveryRepository
 import ca.qc.cstj.consortium.data.repositories.TraderRepository
 import ca.qc.cstj.consortium.domain.models.Delivery
 import ca.qc.cstj.consortium.domain.models.Trader
@@ -34,22 +32,13 @@ class NewDeliveryViewModel(application: Application) : AndroidViewModel(applicat
         }
     }
 
-    /*fun setElementQuantity(nomElement: Constants.Elements, nb : Float) {
-        when(nomElement){
-            Constants.Elements.EPLIL -> delivery.eplil = nb
-            Constants.Elements.AWHIL -> delivery.awhil = nb
-            Constants.Elements.VETHYX -> delivery.vethyx = nb
-            Constants.Elements.LASPYX -> delivery.laspyx = nb
-            Constants.Elements.SMIATHIL -> delivery.smiathil = nb
-        }
-    }*/
-
+    //fonction qui permet de creer une nouvelle commande
     fun createDelivery(delivery: Delivery) {
         viewModelScope.launch {
             deliveryRepository.create(delivery)
         }
     }
-
+    //fonction qui permet de reajuster la valeur du slider apres avoir passer une commande
     fun deleteQuantity(eplil : Float, awhil : Float, vethyx : Float, laspyx : Float, smiathil : Float,) {
         _trader.value!!.eplil -= eplil
         _trader.value!!.awhil -= awhil
@@ -57,14 +46,14 @@ class NewDeliveryViewModel(application: Application) : AndroidViewModel(applicat
         _trader.value!!.laspyx -= laspyx
         _trader.value!!.smiathil -= smiathil
     }
-
-    fun saveDelivery(eplil : Float, awhil : Float, vethyx : Float, laspyx : Float, smiathil : Float) {
+    //fonction qui permet de save une delivery
+    fun saveDelivery() {
         viewModelScope.launch {
-            var elementEplil = _trader.value!!.eplil + eplil
-            var elementAwhil = _trader.value!!.awhil + awhil
-            var elementVethyx = _trader.value!!.vethyx + vethyx
-            var elementLaspyx = _trader.value!!.laspyx + laspyx
-            var elementSmiathil = _trader.value!!.smiathil + smiathil
+            var elementEplil = _trader.value!!.eplil
+            var elementAwhil = _trader.value!!.awhil
+            var elementVethyx = _trader.value!!.vethyx
+            var elementLaspyx = _trader.value!!.laspyx
+            var elementSmiathil = _trader.value!!.smiathil
 
             traderRepository.chargerCargaison(elementEplil, elementAwhil, elementVethyx, elementLaspyx, elementSmiathil)
         }

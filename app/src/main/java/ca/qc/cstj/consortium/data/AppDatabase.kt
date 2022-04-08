@@ -5,7 +5,6 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
-import ca.qc.cstj.consortium.core.Constants
 import ca.qc.cstj.consortium.data.repositories.DeliveryRepository
 import ca.qc.cstj.consortium.domain.models.Delivery
 import kotlinx.coroutines.CoroutineScope
